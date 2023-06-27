@@ -1,5 +1,5 @@
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React, { useState } from 'react';
@@ -9,11 +9,11 @@ import Alert from './components/Alert';
 //   Switch,
 //   Route
 // } from "react-router-dom";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 function App() {
   const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
   const [alert, setAlert] = useState(null);
@@ -53,15 +53,15 @@ function App() {
       {/* <Navbar title="TextUtils" aboutText="About TextUtils" /> */}
       {/* <Navbar/> */}
 
-      {/* <Router> */}
+      <Router>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert}/>
         <div className="container my-3">
-        <Textform showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
-          {/* <Routes>
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/" element={<Textform showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>} />
-          </Routes> */}
+        {/* <Textform showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/> */}
+          <Routes>
+              <Route exact path="/about" element={<About mode={mode}/>} />
+              <Route exact path="/" element={<Textform showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode}/>} />
+          </Routes>
           {/* <Switch>
               <Route exact path="/about">
                 <About />
@@ -71,7 +71,7 @@ function App() {
               </Route>
           </Switch> */}
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
