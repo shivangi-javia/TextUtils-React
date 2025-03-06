@@ -1,6 +1,0 @@
-﻿Date	Time	Severity	PID	TID	Function	Message
-06-03-2025	15:59:01.788	 INFO	 14740	 39284	DllMain	"DLL_PROCESS_ATTACH "
-06-03-2025	15:59:01.789	 INFO	 14740	 18872	InitializeCurrentProcessInfo	"0|0|0"
-06-03-2025	15:59:01.794	ERROR	 14740	 18872	Edlp::Process::GetLabelId	"std::exception thrown GetFileVersionInfoSizeW failed with 1813
-"
-06-03-2025	15:59:01.794	 INFO	 14740	 18872	ProcessEdlpPolicy	"Label Id :0"
